@@ -1,0 +1,26 @@
+.hero_container {
+	width: 100vw;
+	height: 30vh;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+
+	gap: 2.5rem;
+}
+
+.hero_h1 {
+	font-family: "Poppins", sans-serif;
+}
+
+.hero_h1 h1 {
+	line-height: normal;
+	font-size: 2rem;
+	font-weight: 600;
+}
+
+.styles.hero_img_container {
+	width: 212px;
+	height: 212px;
+}
