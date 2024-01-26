@@ -35,7 +35,7 @@ const CardGrid = ({ albumData, gridTitle, showBtn, handleShowBtn }) => {
 					<h1
 						style={{ color: "var(--color-primary)", cursor: "pointer" }}
 						onClick={() => handleShowBtn(true)}>
-						Collpase
+						Collapse
 					</h1>
 				</article>
 				<article className={style.cards_container}>

@@ -24,7 +24,8 @@ export default function App({ albumData, inputComponent }) {
 				cssMode={true}
 				// freeMode={true}
 				onSwiper={setSwiperRef}
-				slidesPerView={1}
+				initialSlide={-1}
+				slidesPerView={5}
 				centeredSlides={false}
 				navigation={true}
 				modules={[Navigation]}

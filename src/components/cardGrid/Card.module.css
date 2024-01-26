@@ -91,6 +91,8 @@
 }
 
 .title_wrapper {
+	/* border: 1px dotted red; */
+
 	overflow: hidden;
 	text-overflow: ellipsis;
 	margin-top: 0.3rem;
@@ -99,4 +101,9 @@
 	font-style: normal;
 	font-weight: 400;
 	line-height: normal;
+
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	/* color: aqua; */
 }
