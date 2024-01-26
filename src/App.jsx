@@ -48,7 +48,7 @@ function App() {
 			{/* ******  New Albums Card Grid ******** */}
 			<CardGrid
 				albumData={newAlbumsList}
-				gridTitle="Top Albums"
+				gridTitle="New Albums"
 				showBtn={showAllBtn2}
 				handleShowBtn={setShowAllBtn2}
 			/>
