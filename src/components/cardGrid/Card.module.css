@@ -1,0 +1,102 @@
+.wrapper {
+	/* border: 1px dotted green; */
+	width: 100vw;
+	height: auto;
+
+	/* object-fit: cover; */
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.grid_container {
+	/* border: 1px dotted red; */
+	width: 95vw;
+
+	min-height: 20vh;
+	height: auto;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.albumTitleWrapper {
+	/* border: 1px dotted red; */
+	height: 7vh;
+
+	pad: 2rem 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.albumTitleWrapper h1 {
+	font-size: 1.25rem;
+	font-weight: 600;
+}
+
+.cards_container {
+	/* border: 1px dotted red; */
+
+	width: 100%;
+	min-height: 50%;
+	height: 75vh;
+
+	display: flex;
+	flex-wrap: wrap;
+	gap: 40px;
+	row-gap: 65px;
+
+	justify-content: flex-start;
+	align-items: center;
+
+	padding: 0 1rem;
+}
+
+.card_container {
+	/* border: 1px dotted red; */
+	cursor: pointer;
+	padding: 0;
+	margin-bottom: 2rem;
+	/* border-radius: 0.75rem; */
+
+	width: 160px;
+	height: 205px;
+}
+
+.card_image_container,
+.card_image_container img {
+	border-top-right-radius: 0.75rem;
+	border-top-left-radius: 0.75rem;
+}
+
+.chip_container {
+	width: 100%;
+	height: 2.5rem;
+
+	padding: 0;
+	margin: 0;
+
+	padding-left: 0.35rem;
+
+	border-bottom-right-radius: 0.75rem;
+	border-bottom-left-radius: 0.75rem;
+
+	background: var(--color-white);
+
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.title_wrapper {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-top: 0.3rem;
+
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
