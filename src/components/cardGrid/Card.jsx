@@ -5,10 +5,6 @@ import style from "./Card.module.css";
 import { Chip, Tooltip } from "@mui/material";
 
 const Card = ({ item, cardType }) => {
-	// if (cardType !== "album") {
-	console.log(item);
-	// }
-
 	return (
 		<Tooltip title={`${item.songs.length} Songs`} placement="top" arrow>
 			<section className={style.card_container}>
@@ -19,7 +15,6 @@ const Card = ({ item, cardType }) => {
 						<Chip
 							label={`${item.follows} Follows`}
 							size="small"
-							className={style.chip_styles}
 							style={{
 								background: "var(--color-black)",
 								color: "var(--color-white)",
