@@ -1,3 +1,11 @@
+.loaderContainer {
+	display: flex;
+	width: 100vw;
+	height: 35vh;
+
+	border: 1px dotted red;
+}
+
 .songsContainer {
 	border: 1px dotted green;
 
@@ -13,5 +21,6 @@
 
 .filterBtnContainer h3 {
 	cursor: pointer;
-	letter-spacing: 2px;
+	/* letter-spacing: 2px; */
+	font-weight: 500;
 }

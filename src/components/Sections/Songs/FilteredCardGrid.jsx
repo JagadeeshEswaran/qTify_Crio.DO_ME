@@ -7,13 +7,18 @@ const FilteredCardGrid = ({ songsData, gridTitle, showBtn, genreList }) => {
 	const [selectedGenre, setSelectedGenre] = useState("All");
 	const [filteredSongsData, setFilteredSongsData] = useState([]);
 
+	console.log(
+		"Genre : " +
+			selectedGenre +
+			"  ||  Then, Filtered Songs : " +
+			filteredSongsData.length
+	);
+
 	useEffect(() => {
-		console.log(
-			"Genre : " +
-				selectedGenre +
-				"  ||  Then, Filtered Songs : " +
-				filteredSongsData.length
-		);
+		// if (!selectedGenre) {
+		// 	setSelectedGenre("All");
+		// 	setFilteredSongsData(songsData);
+		// }
 
 		if (selectedGenre === "All") {
 			setFilteredSongsData(songsData);

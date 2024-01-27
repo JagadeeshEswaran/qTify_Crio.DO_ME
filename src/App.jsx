@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import Hero from "./components/hero/Hero";
 import Navbar from "./components/navbar/Navbar";
@@ -14,6 +15,7 @@ function App() {
 	const [topAlbumsList, setTopAlbumsList] = useState([]);
 	const [newAlbumsList, setNewAlbumsList] = useState([]);
 	const [songsList, setSongsList] = useState([]);
+	const [genres, setGenresList] = useState([]);
 
 	const [showAllBtn1, setShowAllBtn1] = useState(true);
 	const [showAllBtn2, setShowAllBtn2] = useState(true);
@@ -30,7 +32,12 @@ function App() {
 			setSongsList(songsList);
 
 			const genreList = await fetchGenreList();
-			console.log("Genre List from API : ", genreList.data);
+			// setGenresList(genreList.map);
+			let list = [];
+			genreList.forEach((ele) => list.push(ele.label));
+
+			setGenresList(list);
+			// console.log("Genre List from API : ", list);
 		} catch (error) {
 			console.error(error);
 		}
@@ -40,7 +47,7 @@ function App() {
 		generateTopAlbums();
 	}, []);
 
-	// console.log(songsList);
+	// console.log(genres);
 
 	return (
 		<>
@@ -72,7 +79,7 @@ function App() {
 				}}></div>
 
 			{/* ******  Songs Section ******** */}
-			<Songs songsData={songsList} />
+			<Songs songsData={songsList} genresList={genres} />
 		</>
 	);
 }

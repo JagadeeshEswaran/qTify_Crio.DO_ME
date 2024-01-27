@@ -71,7 +71,7 @@ export const fetchGenreList = async () => {
 		let response = await axios.get(`${BACKEND_ENDPOINT}/genres`);
 
 		if (response.status === 200) {
-			return response.data;
+			return response.data.data;
 		}
 	} catch (error) {
 		console.log(error);
