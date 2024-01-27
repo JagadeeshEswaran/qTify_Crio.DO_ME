@@ -47,3 +47,33 @@ export const fetchNewAlbums = async () => {
 		console.log(error);
 	}
 };
+
+export const fetchSongsList = async () => {
+	try {
+		/**
+		 * With axios
+		 */
+		let response = await axios.get(`${BACKEND_ENDPOINT}/songs`);
+
+		if (response.status === 200) {
+			return response.data;
+		}
+	} catch (error) {
+		console.log(error);
+	}
+};
+
+export const fetchGenreList = async () => {
+	try {
+		/**
+		 * With axios
+		 */
+		let response = await axios.get(`${BACKEND_ENDPOINT}/genres`);
+
+		if (response.status === 200) {
+			return response.data;
+		}
+	} catch (error) {
+		console.log(error);
+	}
+};

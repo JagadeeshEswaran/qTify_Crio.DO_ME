@@ -1,0 +1,17 @@
+.songsContainer {
+	border: 1px dotted green;
+
+	margin-bottom: 10rem;
+}
+
+.filterBtnContainer {
+	/* border: 1px dotted red; */
+
+	display: flex;
+	gap: 2rem;
+}
+
+.filterBtnContainer h3 {
+	cursor: pointer;
+	letter-spacing: 2px;
+}

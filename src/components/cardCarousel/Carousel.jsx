@@ -6,7 +6,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import "./styles.css";
@@ -30,7 +29,7 @@ export default function App({ albumData, inputComponent }) {
 				navigation={true}
 				modules={[Navigation]}
 				className="mySwiper">
-				{albumData.map((item) => (
+				{albumData?.map((item) => (
 					<SwiperSlide key={item.id}>
 						{/* {inputComponent} */}
 						<Card item={item} cardType="album" />

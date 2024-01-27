@@ -1,12 +1,20 @@
 import { useEffect, useState } from "react";
 import Hero from "./components/hero/Hero";
 import Navbar from "./components/navbar/Navbar";
-import { fetchNewAlbums, fetchTopAlbums } from "./api/api";
+import {
+	fetchGenreList,
+	fetchNewAlbums,
+	fetchSongsList,
+	fetchTopAlbums,
+} from "./api/api";
 import CardGrid from "./components/cardGrid/CardGrid";
+import Songs from "./components/Sections/Songs/Songs";
 
 function App() {
 	const [topAlbumsList, setTopAlbumsList] = useState([]);
 	const [newAlbumsList, setNewAlbumsList] = useState([]);
+	const [songsList, setSongsList] = useState([]);
+
 	const [showAllBtn1, setShowAllBtn1] = useState(true);
 	const [showAllBtn2, setShowAllBtn2] = useState(true);
 
@@ -17,6 +25,12 @@ function App() {
 
 			const newAlbumsData = await fetchNewAlbums();
 			setNewAlbumsList(newAlbumsData);
+
+			const songsList = await fetchSongsList();
+			setSongsList(songsList);
+
+			const genreList = await fetchGenreList();
+			console.log("Genre List from API : ", genreList.data);
 		} catch (error) {
 			console.error(error);
 		}
@@ -26,7 +40,7 @@ function App() {
 		generateTopAlbums();
 	}, []);
 
-	// console.log(topAlbumsList);
+	// console.log(songsList);
 
 	return (
 		<>
@@ -41,10 +55,6 @@ function App() {
 				handleShowBtn={setShowAllBtn1}
 			/>
 
-			<div>
-				<hr style={{ margin: "1rem 0", background: "var(--color-primary)" }} />
-			</div>
-
 			{/* ******  New Albums Card Grid ******** */}
 			<CardGrid
 				albumData={newAlbumsList}
@@ -52,6 +62,17 @@ function App() {
 				showBtn={showAllBtn2}
 				handleShowBtn={setShowAllBtn2}
 			/>
+
+			<div
+				style={{
+					// color: "lawngreen",
+					background: "var(--color-primary)",
+					height: "2px",
+					marginTop: "2rem",
+				}}></div>
+
+			{/* ******  Songs Section ******** */}
+			<Songs songsData={songsList} />
 		</>
 	);
 }
