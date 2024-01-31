@@ -21,8 +21,10 @@ const Card = ({ item, cardType }) => {
 					<article className={style.chip_container}>
 						<Chip
 							label={`${
-								item?.follows ? item.follows + `Follows` : item.likes
-							} Likes`}
+								item?.follows
+									? item.follows + ` Follows`
+									: item.likes + ` Likes`
+							}`}
 							size="small"
 							style={{
 								background: "var(--color-black)",
